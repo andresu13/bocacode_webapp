@@ -62,7 +62,7 @@
 
     `git remote add azure https://<APP_NAME>.scm.azurewebsites.net/<APP_NAME>.git`
 
-7. Push the code to your Azure Web Application
+7. Push the code to your Azure Web Application. It will take about 5 minutes for the application to be uploaded and built in Azure.
     
     `git push azure master`
 
