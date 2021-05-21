@@ -19,6 +19,56 @@
 - **Region**: Select **East US**
 - **Linux Plan**: Select **Create New** and enter a unique name for the Service Plan
 
-    ![Create WebApp](images/webapp_form.png)
+    ![WebApp Basics Form](images/webapp_form.png)
 
 4. Click **Review+Create**
+
+5. Click **Create**
+
+6. Go into the web app resource once it gets deployed and click on **Deployment Center** under the **Deployment** section.
+
+    ![WebApp Deployment Center](images/webapp_deploymentcenter.png)
+
+7. Click on the **FTPS Credentials** tab and below the **User Scope** section, enter a **Username** and **Password** that will be used to authentiate when deploying the application.
+
+8. Open **Azure CloudShell** and make sure you select **Bash** mode.
+
+    ![Azure CloudShell](images/cloudshell.png)
+
+   >**Note**: If this is the first time opening CloudShell, you will get a prompt asking to create a Storage Account. Leave the defaults and select **Create Storage**.
+
+9. Download zip file containing the source code for the Todo Too App
+
+    `wget https://github.com/andresu13/bocacode_webapp/raw/main/todo-app.zip`
+
+10. Unzip the zip archive
+
+    `unzip todo-app.zip -d todo-app`
+
+11. Go inside the todo-app folder
+
+    `cd todo-app`
+
+12. Execute the following commands to create a GIT repository and commit the changes to that repo.
+    ```
+    git init
+    git add -A
+    git commit -m "Initial Commit"
+    ```
+
+13. Create a connection to the remote app. Make sure you replace **<APP_NAME>** with the name of your application:
+
+    `git remote add azure https://<APP_NAME>.scm.azurewebsites.net/<APP_NAME>.git`
+
+14. Push the code to your Azure Web Application
+    
+    `git push azure master`
+
+15. Go back to the Web App in the Azure Portal and click on **Overview**. Click on the URL for your application on the top right of that screen:
+
+    ![WebApp Overview](images/webapp_url.png)
+
+16. A new tab will be opened in your browser that should take you to the app you just deployed:
+
+    ![BocaCode ToDo App](images/bocacode-app.png)
+
