@@ -51,26 +51,36 @@
 
     `cd todo-app`
 
-5. Execute the following commands to create a GIT repository and commit the changes to that repo.
+5. Configure user and email to be used by GIT (Enter one command at a time). Make sure you replace email and name below with your own email and name.
+    ```
+    git config --global user.email "andresu@outlook.com"
+    git config --global user.name "Andres Urrutia"
+    ```
+
+6. Execute the following commands to create a GIT repository and commit the changes to that repo (Enter one command/line at a time).
     ```
     git init
     git add -A
     git commit -m "Initial Commit"
     ```
 
-6. Create a connection to the remote app. Make sure you replace **<APP_NAME>** with the name of your application:
+7. Create a connection to the remote app. Make sure you replace **<APP_NAME>** with the name of your application:
 
     `git remote add azure https://<APP_NAME>.scm.azurewebsites.net/<APP_NAME>.git`
 
-7. Push the code to your Azure Web Application. It will take about 5 minutes for the application to be uploaded and built in Azure.
+8. Push the code to your Azure Web Application. It will take about 5 minutes for the application to be uploaded and built in Azure.
     
     `git push azure master`
 
-8. Go back to the Web App in the Azure Portal and click on **Overview**. Click on the URL for your application on the top right of that screen:
+9. Authenticate using the username and password you configured earlier.
+
+10. Go back to the Web App in the Azure Portal and click on **Overview**. Click on the URL for your application on the top right of that screen:
 
     ![WebApp Overview](images/webapp_url.png)
 
-9. A new tab will be opened in your browser that should take you to the app you just deployed:
+11. A new tab will be opened in your browser that should take you to the app you just deployed:
 
     ![BocaCode ToDo App](images/bocacode-app.png)
+
+   >**Note**: It might take a couple of minutes for the new app to show up. You can refresh your browser a couple of times until it does*.
 
