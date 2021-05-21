@@ -1,6 +1,6 @@
 # Azure Fundamentals: NodeJS App Deployment
 
-### Task 1: Create App Service in the Azure Portal
+### Task 1: Create and Configure App Service in the Azure Portal
 
 1. In the [Azure Portal](https://portal.azure.com/), select **+Create a resource** from the left menu, then search for **web app** or find it in the Popular Services menu.
 
@@ -31,44 +31,46 @@
 
 7. Click on the **FTPS Credentials** tab and below the **User Scope** section, enter a **Username** and **Password** that will be used to authentiate when deploying the application.
 
-8. Open **Azure CloudShell** and make sure you select **Bash** mode.
+### Task 2: Download Source Code and Push to Web App
+
+1. Open **Azure CloudShell** and make sure you select **Bash** mode.
 
     ![Azure CloudShell](images/cloudshell.png)
 
    >**Note**: If this is the first time opening CloudShell, you will get a prompt asking to create a Storage Account. Leave the defaults and select **Create Storage**.
 
-9. Download zip file containing the source code for the Todo Too App
+2. Download zip file containing the source code for the Todo Too App
 
     `wget https://github.com/andresu13/bocacode_webapp/raw/main/todo-app.zip`
 
-10. Unzip the zip archive
+3. Unzip the zip archive
 
     `unzip todo-app.zip -d todo-app`
 
-11. Go inside the todo-app folder
+4. Go inside the todo-app folder
 
     `cd todo-app`
 
-12. Execute the following commands to create a GIT repository and commit the changes to that repo.
+5. Execute the following commands to create a GIT repository and commit the changes to that repo.
     ```
     git init
     git add -A
     git commit -m "Initial Commit"
     ```
 
-13. Create a connection to the remote app. Make sure you replace **<APP_NAME>** with the name of your application:
+6. Create a connection to the remote app. Make sure you replace **<APP_NAME>** with the name of your application:
 
     `git remote add azure https://<APP_NAME>.scm.azurewebsites.net/<APP_NAME>.git`
 
-14. Push the code to your Azure Web Application
+7. Push the code to your Azure Web Application
     
     `git push azure master`
 
-15. Go back to the Web App in the Azure Portal and click on **Overview**. Click on the URL for your application on the top right of that screen:
+8. Go back to the Web App in the Azure Portal and click on **Overview**. Click on the URL for your application on the top right of that screen:
 
     ![WebApp Overview](images/webapp_url.png)
 
-16. A new tab will be opened in your browser that should take you to the app you just deployed:
+9. A new tab will be opened in your browser that should take you to the app you just deployed:
 
     ![BocaCode ToDo App](images/bocacode-app.png)
 
